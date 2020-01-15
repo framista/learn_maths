@@ -49,6 +49,25 @@ body{
 }
 
 .element{
-    background-color: powderblue;
-    border: solid 1px blue;
+    background-image: url("balls.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 5px;
+}
+
+.element--showed{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: wheat;
+    font-weight: bold;
+    font-size: 4em;
+    background-color: chocolate;
+    background-image: none;
+}
+
+.element--guessed{
+    background-color: grey;
+    color: grey;
 }
