@@ -1,4 +1,4 @@
-# teach_maths
+# learn_maths
 ## General info
 A website for pupils to practise mathematical operation
 ## Technologies
