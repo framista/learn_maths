@@ -1,4 +1,4 @@
-const cardsAmount = 36;
+const cardsAmount = 24;
 const cards = [...document.getElementsByClassName("element")];
 const startTime = new Date().getDate();
 
@@ -23,8 +23,8 @@ function prepareDataMultiplyArray() {
 
 function randomNumbers(data) {
     while (true) {
-        let number1 = Math.floor(Math.random() * 10) + 1;
-        let number2 = Math.floor(Math.random() * 10) + 1;
+        let number1 = Math.floor(Math.random() * 8) + 2;
+        let number2 = Math.floor(Math.random() * 8) + 2;
         let result = number1 * number2;
         if (data.findIndex(d => d.result === result) == -1) {
             return [number1, number2]
@@ -87,20 +87,18 @@ function clickedCard() {
             cards[activeCard].innerHTML = gameData[cardPosition2[0]].result
         activeCards[1] = activeCard
         setTimeout(() => {
+            activeCards.forEach(e => cards[e].innerHTML = "")
             if (activeCard === cardPosition[1]) {
                 activeCards.forEach(e => cards[e].classList.add("element--guessed"))
                 pairsFound++;
                 if (pairsFound === cardsAmount / 2) {
-                    console.log("WYGRANA")
+                    alert("WYGRANA")
                     const endTime = new Date().getTime();
                     const gameTime = (endTime - startTime) / 1000
                     location.reload()
                 }
             } else {
-                activeCards.forEach(e => {
-                    cards[e].innerHTML = ""
-                    cards[e].classList.remove("element--showed")
-                })
+                activeCards.forEach(e => cards[e].classList.remove("element--showed"))
             }
             activeCard = ""
             activeCards.length = 0
@@ -115,5 +113,4 @@ function init() {
 }
 
 const gameData = prepareDataMultiplyArray()
-console.log(gameData)
 init()
