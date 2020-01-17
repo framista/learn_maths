@@ -1,0 +1,29 @@
+{
+  "name": "learn_maths",
+  "version": "1.0.0",
+  "description": "A website for pupils to practise mathematical operation\r ## Technologies\r * JavaScript\r * CSS3\r * HTML5\r ## Setup\r To clone and run this application, you'll need Git installed on your computer. From your command line:\r ```\r # Clone this repository\r $ git clone https://github.com/akteamcoderscamp/coderscamp_project_2",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --mode development --watch",
+    "build": "webpack --mode production",
+    "server": "webpack-dev-server --inline --hot"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/framista/learn_maths.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/framista/learn_maths/issues"
+  },
+  "homepage": "https://github.com/framista/learn_maths#readme",
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
+  }
+}

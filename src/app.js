@@ -92,9 +92,9 @@ function clickedCard() {
                 activeCards.forEach(e => cards[e].classList.add("element--guessed"))
                 pairsFound++;
                 if (pairsFound === cardsAmount / 2) {
-                    alert("WYGRANA")
                     const endTime = new Date().getTime();
                     const gameTime = (endTime - startTime) / 1000
+                    alert("WYGRANA ", gameTime)
                     location.reload()
                 }
             } else {
