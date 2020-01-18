@@ -68,7 +68,7 @@ body {
 }
 
 .nav>.nav-links>a:hover {
-    background-color: rgba(0, 0, 0, 0.3);
+    color: black;
 }
 
 .nav>#nav-check {
@@ -119,6 +119,14 @@ body {
     background-image: none;
 }
 
+sup {
+    vertical-align: top;
+    font-size: 60%;
+    line-height: 1;
+    position: relative;
+    top: -0.7em;
+}
+
 .element--guessed {
     background-color: grey;
     color: grey;
@@ -165,7 +173,7 @@ body {
         height: 0px;
     }
     .nav>#nav-check:checked~.nav-links {
-        height: 200px;
+        height: 150px;
         overflow-y: auto;
     }
 }
