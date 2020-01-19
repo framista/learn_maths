@@ -14,7 +14,7 @@ let activeCard;
 const activeCards = [];
 let pairsFound = 0;
 let cardPosition
-
+let movesAmount = 0;
 const startTime = new Date().getDate();
 
 multiplyHref.addEventListener('click', e => {
@@ -55,9 +55,11 @@ function clickedCard() {
         else
             showResult(cardPosition)
         cards[activeCard].classList.add("element--showed")
+        movesAmount++;
         return
     } else {
         cards.forEach(card => card.removeEventListener("click", clickedCard))
+        movesAmount++;
         cards[activeCard].classList.add("element--showed")
         let cardPosition2 = setPosition(gameData, activeCard)
         if (cardPosition2[2] == 0)
@@ -74,7 +76,7 @@ function clickedCard() {
                 if (pairsFound === cardsAmount / 2) {
                     const endTime = new Date().getTime();
                     const gameTime = (endTime - startTime) / 1000
-                    alert("WYGRANA " + gameTime)
+                    alert("WYGRANA " + gameTime + " ilosc ruchow " + movesAmount)
                     location.reload()
                 }
 
@@ -128,6 +130,7 @@ function init() {
         card.innerHTML = "";
     })
     pairsFound = 0;
+    movesAmount = 0;
     gameData = prepareDataArray(cardsAmount, operation)
     cards.forEach(card => card.addEventListener("click", clickedCard))
     console.log(gameData)
