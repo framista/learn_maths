@@ -102,11 +102,23 @@ body {
 }
 
 .element {
-    background-image: url("balls.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     border-radius: 5px;
+}
+
+.element--multiply{
+    background-image: url("multiply.jpg");
+}
+
+.element--power{
+    background-image: url("power.jpg");
+}
+
+.element--root{
+    background-image: url("root.jpg");
+    font-size: 0.6em;
 }
 
 .element--showed {
