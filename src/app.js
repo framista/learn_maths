@@ -121,13 +121,19 @@ function showResult(cardPosition){
 
 function init() {
     cards.forEach( card => {
-        if (card.classList.contains("element--showed")){
-            card.classList.remove("element--showed");
-        }
-        if (card.classList.contains("element--guessed")){
-            card.classList.remove("element--guessed");
-        }
+        card.className = "element";
         card.innerHTML = "";
+        switch (operation) {
+            case 'multiply':
+                card.classList.add("element--multiply");
+                break
+            case 'power':
+                card.classList.add("element--power");
+                break
+            case 'root':
+                card.classList.add("element--root");
+                break;
+        }
     })
     pairsFound = 0;
     movesAmount = 0;
